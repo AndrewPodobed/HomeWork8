@@ -2,12 +2,14 @@ package com.company;
 
 import java.text.Collator;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
 
-    public static void main(String[] args) {
+
+	public static void main(String[] args) {
 	Adress adress1 = new Adress("Москва", "Москворечная", 16);
 	Adress adress2 = new Adress("Санкт-Петербург", "Ленина", 45);
 	Adress adress4 = new Adress("Минск", "Франциска Скорины", 52);
@@ -27,15 +29,14 @@ public class Main {
 
 
 		personList.stream().filter(Objects::nonNull).
-                filter(person -> person.name != null).
+				filter(person -> person.name != null).
 				filter(person -> person.lastname != null).
-                filter(person -> person.adress != null).
-                sorted(Comparator.comparing(person -> person.adress.getNumberHome())).
-                collect(Collectors.toList()).
+				filter(person -> person.adress != null).
+				sorted(Comparator.comparing(person -> person.adress.getNumberHome())).
+				map(Objects::toString).
+				collect(Collectors.toList()).
                 forEach(System.out::println);
 
-
     }
-
 
 }
