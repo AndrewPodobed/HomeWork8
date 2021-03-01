@@ -28,14 +28,14 @@ public class Main {
 	List <Person> personList = List.of(person1, person2, person3, person4, person5, person6);
 
 
-		personList.stream().filter(Objects::nonNull).
-				filter(person -> person.name != null).
-				filter(person -> person.lastname != null).
-				filter(person -> person.adress != null).
-				sorted(Comparator.comparing(person -> person.adress.getNumberHome())).
-				map(Objects::toString).
-				collect(Collectors.toList()).
-                forEach(System.out::println);
+		personList.stream().filter(Objects::nonNull)
+				.filter(person -> person.getName() != null)
+				.filter(person -> person.getLastname() != null)
+				.filter(person -> person.getAdress() != null)
+				.sorted(Comparator.comparing(person -> person.getAdress().getNumberHome())).
+				map(Objects::toString)
+				.collect(Collectors.toList())
+				.forEach(System.out::println);
 
     }
 

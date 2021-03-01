@@ -1,9 +1,9 @@
 package com.company;
 
 public class Person {
-    public String name;
-    public String lastname;
-    public Adress adress;
+    private String name;
+    private String lastname;
+    private Adress adress;
 
     public Person(String name, String lastname, Adress adress){
         this.name = name;
