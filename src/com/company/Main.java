@@ -32,8 +32,8 @@ public class Main {
 				.filter(person -> person.getName() != null)
 				.filter(person -> person.getLastname() != null)
 				.filter(person -> person.getAdress() != null)
-				.sorted(Comparator.comparing(person -> person.getAdress().getNumberHome())).
-				map(Objects::toString)
+				.sorted(Comparator.comparing(person -> person.getAdress().getNumberHome()))
+				.map(Objects::toString)
 				.collect(Collectors.toList())
 				.forEach(System.out::println);
 
